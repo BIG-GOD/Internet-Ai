@@ -1,0 +1,45 @@
+自定义nginx配置
+/usr/sbin/nginx -c /etc/nginx/fzjh.conf 
+
+
+检查路径
+/usr/sbin/nginx -t
+
+配置文件路径软链接到项目目录的配置文件
+/etc/nginx/conf.d/
+
+启动nginx命令
+/etc/init.d/nginx start
+
+默认nginx.conf
+/etc/nginx
+
+==================================
+netstat -tunlp |grep 8080
+
+
+
+==================================
+user nobody;
+worker_processes 2;
+events{
+        worker_connections 1024;
+}       
+
+http{
+        upstream myproject{
+		server xxx.xxx.xxx.xx;
+		server xxx.xxx.xxx.xx;
+		ip_hash;
+        }
+
+        server{
+                listen 8080;
+                location / {
+                        proxy_pass http://myproject;
+                }        
+        }       
+        
+}
+
+

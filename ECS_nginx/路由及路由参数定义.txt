@@ -1,0 +1,12 @@
+#返回该用户id的全部用户信息
+请求地址：http://120.27.44.239:8012/user/<userid>
+请求方式: GET/POST
+{
+  'user_id': result.userId,
+  'user_Name': result.userName,
+  'user_Email': result.userEmail,
+  'user_Mobile': result.userMobile,
+  'user_Passwd': result.userPasswd,
+  'user_Ispaid': result.userIspaid
+}
+
