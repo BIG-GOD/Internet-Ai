@@ -2,4 +2,4 @@ cc -o test test.c -lwiringPi
 
 gcc -o test test.c ../wiringPi/lcd.o .lwringPi
 
-http://120.27.44.239:8080/debug?port=5858
+http://ip:8080/debug?port=5858
