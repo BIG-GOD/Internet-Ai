@@ -1,0 +1,1 @@
+docker run --name=zhao_flask_mysql --link=mysqlserver:Docker_DB -it daocloud.io/zhkmxx9302013/androidflask:master-be98041 -h Docker_DB -u root -p letmein
