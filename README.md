@@ -7,3 +7,5 @@ BIGGOD团队的安卓课程设计，致力于使用容器技术快速构建虚�
 ######2.阿里云的代码分别放到ECS中
 ######3.树莓派的GPIO的代码即fzz图放到Raspberry_GPIO中
 ######4.树莓拍的服务器代码放到Raspberry_flask中
+
+![github](./a_GUIDE/1.jpg)
