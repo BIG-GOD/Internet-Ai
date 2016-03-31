@@ -1,0 +1,50 @@
+
+user  nobody;
+
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+
+    default_type  application/octet-stream;
+
+    #access_log  off;
+
+    sendfile        on;
+
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+
+
+upstream flask {
+
+    server 192.168.0.7:5000;
+
+    server 192.168.0.8:5000;
+
+    ip_hash;
+}
+
+
+server {
+
+        listen  8080;
+
+        server_name  in_docker_nginx_front;
+
+        location / {
+
+            proxy_pass http://flask;
+
+        }
+    }
+}
