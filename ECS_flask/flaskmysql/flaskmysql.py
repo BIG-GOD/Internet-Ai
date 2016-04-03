@@ -45,6 +45,7 @@ def state(user_id, device_id):
                        'pm': result.pm,
                        'smoke': result.smoke,
                        'updatetime':result.update_time}
+        config.session.close()
         return json.dumps(json_result, ensure_ascii=False)
 
 
