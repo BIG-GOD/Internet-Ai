@@ -3,13 +3,29 @@ from sqlalchemy import text
 import model
 import config as config
 
+import socket
+import fcntl
+import struct
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Q\xc5h\x93\xf4s\x87\xe1\xdf\x0c6r\xb8q\x07\xd6-\xc5\xb8\x1ew1\x8c\xfa'
+
+
+#This function is used to get the ip from host
+def get_ip_address(ifname):
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    return socket.inet_ntoa(fcntl.ioctl(
+        s.fileno(),
+        0x8915,  # SIOCGIFADDR
+        struct.pack('256s', ifname[:15])
+    )[20:24])
+#ipaddr is the value of the eth0 ip address
+ipaddr =   get_ip_address('eth0')
 
 @app.route('/')
 def hello_world():
     return 'Hello World!'
-
+#Register router post
 @app.route('/user/register',methods=['POST','GET'])
 def reg():
     user_name=request.form["username"]
@@ -25,7 +41,7 @@ def reg():
         return '<html>succeed</html>'
     return 'username is already exist!'
 
-
+#Register router get
 @app.route('/user/register/<user_username>&<user_userpasswd>',methods=['GET','POST'])
 def register(user_username,user_userpasswd):
     result=config.session.query(model.user).\
@@ -39,6 +55,7 @@ def register(user_username,user_userpasswd):
         return 'succeed'
     return 'username is already exist!'
 
+#Login router
 @app.route('/user/login/<user_username>&<user_userpassword>',methods=['GET','POST'])
 def login(user_username,user_userpassword):
     result=config.session.query(model.user).\
@@ -47,8 +64,6 @@ def login(user_username,user_userpassword):
     if result is None:
         print 'the username is not exist!'
     else:
-    #print type(result)
-    #print '111111111'
         if result.check_password_hash(user_userpassword):
             return 'succeed login'
         else:
@@ -73,6 +88,6 @@ def state(user_id, device_id):
                        'updatetime':result.update_time}
         return json.dumps(json_result, ensure_ascii=False)
 
-
+#The value of the host is captured from eth0 ip address
 if __name__ == '__main__':
-    app.run(debug='true')
+    app.run(host=ipaddr,debug='true')
