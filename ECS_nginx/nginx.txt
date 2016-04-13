@@ -1,17 +1,19 @@
-×Ô¶¨ÒånginxÅäÖÃ
+è‡ªå®šä¹‰nginxé…ç½®
 /usr/sbin/nginx -c /etc/nginx/fzjh.conf 
 
+ç”¨æˆ·ç»„
+/usr/sbin/groupadd -f nobody
 
-¼ì²éÂ·¾¶
+æ£€æŸ¥è·¯å¾„
 /usr/sbin/nginx -t
 
-ÅäÖÃÎÄ¼şÂ·¾¶ÈíÁ´½Óµ½ÏîÄ¿Ä¿Â¼µÄÅäÖÃÎÄ¼ş
+é…ç½®æ–‡ä»¶è·¯å¾„è½¯é“¾æ¥åˆ°é¡¹ç›®ç›®å½•çš„é…ç½®æ–‡ä»¶
 /etc/nginx/conf.d/
 
-Æô¶¯nginxÃüÁî
+å¯åŠ¨nginxå‘½ä»¤
 /etc/init.d/nginx start
 
-Ä¬ÈÏnginx.conf
+é»˜è®¤nginx.conf
 /etc/nginx
 
 ==================================
@@ -40,6 +42,44 @@ http{
                 }        
         }       
         
+}
+******************************************************
+
+
+user  nobody;
+worker_processes  1;
+events {
+    worker_connections  1024;
+}
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    #access_log  off;
+    sendfile        on;
+    #tcp_nopush     on;
+    keepalive_timeout  65;
+    #gzip  on;
+
+upstream flask {
+    server 120.27.44.239:32773;
+    server 120.27.44.239:32774;
+    ip_hash;
+}
+
+server {
+       # listen  8080;
+        listen 443;
+        server_name  in_docker_nginx_front;
+        ssl on;
+        ssl_certificate /etc/nginx/33iq.crt;
+        ssl_certificate_key /etc/nginx/33iq_nopass.key;
+        location / {
+#                 if ( $http_destination ~* ^https(.*)$ ) {
+#                         set $fixed_destination http$1;
+#                        }
+                 proxy_pass http://flask;
+        }
+    }
 }
 
 
