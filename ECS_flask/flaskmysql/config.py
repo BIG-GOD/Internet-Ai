@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 db = SQLAlchemy(flaskmysql.app)
-engine = create_engine('mysql://root:5407922@localhost/andriodpi')
+engine = create_engine('mysql://root:letmein@120.27.44.239:32772/andriodpi')
 Session = sessionmaker(bind=engine)
 session = Session()
 
