@@ -22,12 +22,12 @@ def reg():
         config.session.merge(new_user)
         config.session.commit()
         config.db.session.close()
-        return 'succeed'
+        return '<html>succeed</html>'
+    return 'username is already exist!'
 
 
-@app.route('/user/register/<user_username>&<user_userpasswd>&<user_moblie>&<user_tel>&<user_add>&<user_ispaid>\
-            &<user_regtime>',methods=['GET','POST'])
-def register(user_username,user_userpasswd,user_mobile,user_tel,user_add,user_ispaid,user_regtime):
+@app.route('/user/register/<user_username>&<user_userpasswd>',methods=['GET','POST'])
+def register(user_username,user_userpasswd):
     result=config.session.query(model.user).\
        from_statement(text("SELECT * from user where userName=:username")).\
         params(username=user_username).first()
