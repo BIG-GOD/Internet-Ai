@@ -1,6 +1,6 @@
-__author__ = 'zhkmx'
+__author__ = 'eason'
 import config as main
-
+from werkzeug.security import generate_password_hash, check_password_hash
 db = main.db
 
 
@@ -10,8 +10,21 @@ class user(db.Model):
     userPasswd = db.Column(db.String(45))
     userName = db.Column(db.String(45))
     userMobile = db.Column(db.String(13))
+    password_hash=db.Column(db.String(128))
     userEmail = db.Column(db.String(50))
     userIspaid = db.Column(db.Integer)
+
+    @property
+    def userPasswd(self):
+        print '123'
+        raise AttributeError('you cant read it')
+    @userPasswd.setter
+    def userPasswd(self,userPasswd):
+        self.password_hash=generate_password_hash(userPasswd)
+
+    def check_password_hash(self,userPasswd):
+        return check_password_hash(self.password_hash,userPasswd)
+
 
 class device(db.Model):
     __tablename__ = 'device'
