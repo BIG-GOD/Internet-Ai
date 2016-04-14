@@ -3,9 +3,17 @@
 __author__ = 'zhkmx'
 from time import sleep
 
-##在此写入有关于一氧化碳获取的函数
-#def get_gas():
-#   return
+##煤气检测函数
+#@author YaoEmily
+##
+def get_gas():
+    channel = 24
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(channel, GPIO.IN)
+    if GPIO.input(channel) == GPIO.HIGH:
+	return 1
+    else:
+	return 0
 
 
 ##接口函数，将一氧化碳获取函数在此函数中调用
@@ -13,8 +21,8 @@ from time import sleep
 ##
 def commit_gas(dict):
     while True:
-        #get_gas()
-        dict['gas'] = 6    #传入Manager临界资源值，该表达式右值应为Gas获取有关函数所返回的实时gas*（此处的6为测试值）
+        gas = get_gas()
+        dict['gas'] = gas    #传入Manager临界资源值，该表达式右值应为Gas获取有关函数所返回的实时gas*（此处的6为测试值）
         print 'updated6'
         sleep(1)             #同步标注时间1s
     return

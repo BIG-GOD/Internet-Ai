@@ -6,3 +6,4 @@ from humidity import commit_humidity
 from pm import commit_pm
 from smoke import commit_smoke
 from temprature import commit_temprature
+from initialize import initialize
