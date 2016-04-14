@@ -10,7 +10,7 @@ import RPiCommitServer as RpiServer
 
 
 def main():
-
+    RpiHardware.initialize()
     manager = Manager()  # Using Manager (Server process method) to manage a global dictionary
     dict = {
             'temp': 0,
