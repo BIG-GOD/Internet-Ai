@@ -72,7 +72,7 @@ def commit_temprature(dict):
     while True:
         temprature = get_humidity_temprature('t')
         humidity = get_humidity_temprature('h')
-        if (temprature == -1000 || humidity == -1000)
+        if (temprature == -1000 or humidity == -1000):
             i = i + 1
         else:
             dict['temp'] = temprature    #传入Manager临界资源值，该表达式右值应为温度获取有关函数所返回的实时温度*（此处的1为测试值）
