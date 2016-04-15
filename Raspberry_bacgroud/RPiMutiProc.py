@@ -29,7 +29,7 @@ def main():
     pool.apply_async(RpiHardware.commit_fire, (g_dict,))
     pool.apply_async(RpiHardware.commit_gas, (g_dict,))
     pool.apply_async(RpiHardware.commit_pm, (g_dict,))
-    pool.apply_async(RpiHardware.commit_humidity, (g_dict,))
+    #pool.apply_async(RpiHardware.commit_humidity, (g_dict,))
     pool.apply_async(RpiHardware.commit_smoke, (g_dict,))
     pool.apply_async(RpiServer.commit_to_server, (g_dict,))
     pool.close()
