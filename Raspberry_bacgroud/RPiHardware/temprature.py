@@ -58,7 +58,7 @@ def get_humidity_temprature(th):
     if check == tmp:
         if th == 't':
             return temperature
-        else if th == 'h':
+        else:
             return humidity
     else:
         return -1000
