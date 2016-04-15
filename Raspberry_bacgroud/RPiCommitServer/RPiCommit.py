@@ -15,6 +15,8 @@ def commit_to_server(dict):
     db = MySQLdb.connect(host = config.host, port = config.port, user=config.user, passwd=config.passwd, db=config.db)
     db.autocommit(True)
     cursor = db.cursor()
+    ISOTIMEFORMAT='%Y-%m-%d %X'
+
 
     while True:
         try:
@@ -24,8 +26,9 @@ def commit_to_server(dict):
                            "pm = %s, "
                            "fire = %s, "
                            "smoke = %s "
+                           "update_time = %s"
                            "WHERE device_deviceId = '%s'"
-                           % (str(dict['temp']), str(dict['humid']), str(dict['fire']), str(dict['smoke']), str(dict['gas']), str(dict['pm']), str(getMac())))#str(getMac())
+                           % (str(dict['temp']), str(dict['humid']), str(dict['fire']), str(dict['smoke']), str(dict['gas']), str(dict['pm']),time.strftime(ISOTIMEFORMAT, time.localtime( time.time() ) ), str(getMac())))#str(getMac())
             print 'commited'
             sleep(1)
         except Exception,ex:
