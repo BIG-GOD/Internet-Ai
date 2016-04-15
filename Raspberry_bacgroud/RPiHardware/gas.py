@@ -8,8 +8,6 @@ from time import sleep
 ##
 def get_gas():
     channel = 24
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(channel, GPIO.IN)
     if GPIO.input(channel) == GPIO.HIGH:
 	return 1
     else:

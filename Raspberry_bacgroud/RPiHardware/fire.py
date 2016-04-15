@@ -9,8 +9,6 @@ from time import sleep
 ##
 def get_fire():
     channel = 23
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(channel, GPIO.IN)
     if GPIO.input(channel) == GPIO.HIGH:
 	return 1
     else:

@@ -6,4 +6,7 @@ import RPi.GPIO as GPIO
 import time
 
 def initialize():
-    return 0
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(23, GPIO.IN)
+    GPIO.setup(24, GPIO.IN)
+    return

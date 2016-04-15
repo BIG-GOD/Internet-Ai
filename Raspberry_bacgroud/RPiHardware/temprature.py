@@ -9,7 +9,6 @@ def get_humidity_temprature(th):
     data = []
     j = 0
     
-    GPIO.setmode(GPIO.BCM)
     GPIO.setup(channel, GPIO.OUT)
     GPIO.output(channel, GPIO.LOW)
     time.sleep(0.02)
