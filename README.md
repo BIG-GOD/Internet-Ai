@@ -3,9 +3,12 @@ BIGGOD团队的安卓课程设计，致力于使用容器技术快速构建虚�
 
 
 ##贡献者须知
-######1.安卓代码放到 Android文件夹
-######2.阿里云的代码分别放到ECS中
-######3.树莓派的GPIO的代码即fzz图放到Raspberry_GPIO中
-######4.树莓拍的服务器代码放到Raspberry_flask中
+1. 安卓代码放到 Android文件夹
+2. 阿里云的代码分别放到ECS_xxx中
+3. 树莓派的GPIO的代码即fzz图放到Raspberry_GPIO中
+4. 树莓派的服务器代码放到Raspberry_flask中
+5. a_Guide文件夹存放贡献者们的Mind
+
+
 
 ![github](./a_GUIDE/ECS架构详情.jpg)
