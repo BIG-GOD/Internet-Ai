@@ -23,7 +23,7 @@ while i != 0:
                         time.sleep(0.1)
 		j = j + 1
 	j = 0
-	if(yespeople > 3):
+	if(yespeople > 5):
 		print "There is someone coming"
 	else:
 		print "Nobody is here"
