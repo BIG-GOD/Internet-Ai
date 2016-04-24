@@ -47,3 +47,14 @@ class parameter(db.Model):
     smoke = db.Column(db.String(45))
     device_deviceId = db.Column(db.String(20))
     update_time = db.Column(db.DateTime)
+    
+#history parameter
+class history(db.Model):
+    __tablename__ = 'history'
+    historyid = db.Column(db.Integer,primary_key=True)
+    temprature = db.Column(db.String(45))
+    humidity = db.Column(db.String(45))
+    gas = db.Column(db.String(45))
+    fire = db.Column(db.String(45))
+    device_deviceId = db.Column(db.String(20))
+    updatetime = db.Column(db.DateTime)
