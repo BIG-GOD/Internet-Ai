@@ -87,6 +87,8 @@ def state(user_id, device_id):
                        'smoke': result.smoke,
                        'updatetime':result.update_time}
         return json.dumps(json_result, ensure_ascii=False)
+        
+#Get history data 3 days before today.
 @app.route('/state/history',methods=['POST'])
 def historypost():
     user_id=request.form["user_id"]
@@ -95,11 +97,8 @@ def historypost():
         from_statement(text("select * from history where device_deviceId=:deviceid ORDER BY updatetime DESC  LIMIT 36")).\
         params(deviceid=device_deviceId).all()
     if results is None:
-        #json_result={'history_parameter':None}
         return jsonify({"history_parameter":None})
     else:
-        # print type(results)
-        # print type(results[0])
         list_result=[]
         dict_result={}
         for i in range(len(results)):
