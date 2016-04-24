@@ -87,6 +87,25 @@ def state(user_id, device_id):
                        'smoke': result.smoke,
                        'updatetime':result.update_time}
         return json.dumps(json_result, ensure_ascii=False)
+@app.route('/state/history',methods=['POST'])
+def historypost():
+    user_id=request.form["user_id"]
+    device_deviceId=request.form["device_deviceId"]
+    results=config.session.query(model.history).\
+        from_statement(text("select * from history where device_deviceId=:deviceid ORDER BY updatetime DESC  LIMIT 36")).\
+        params(deviceid=device_deviceId).all()
+    if results is None:
+        #json_result={'history_parameter':None}
+        return jsonify({"history_parameter":None})
+    else:
+        # print type(results)
+        # print type(results[0])
+        list_result=[]
+        dict_result={}
+        for i in range(len(results)):
+            list_result.append((results[i].updatetime.strftime("%Y-%m-%d %H:%M:%S"),results[i].temprature,results[i].humidity,results[i].gas,results[i].fire))
+        dict_result=map(lambda x: dict(zip(('updatetime', 'temprature', 'humidity','gas','fire'), x)), list_result)
+        return json.dumps(dict_result)
 
 #The value of the host is captured from eth0 ip address
 if __name__ == '__main__':
