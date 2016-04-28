@@ -1,3 +1,5 @@
-# 树莓派GPIO相关代码
+# 鏍戣帗娲綠PIO鐩稿叧浠ｇ爜
 
-​	将RPi与硬件控制有关的源码以及.fzz图，PCB图放入该文件夹
+鈥�	Codes_Sensors鏂囦欢澶逛腑鏀剧疆浼犳劅鍣ㄧ殑DEMO浠ｇ爜
+* Codes_Controls鏂囦欢澶逛腑鏀剧疆鎺у埗鍣ㄧ殑DEMO浠ｇ爜
+* Fzzs鏂囦欢澶逛腑鏀剧疆PCB缁樺埗婧愬浘
