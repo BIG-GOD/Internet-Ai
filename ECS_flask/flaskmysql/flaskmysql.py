@@ -25,6 +25,34 @@ ipaddr =   get_ip_address('eth0')
 @app.route('/')
 def hello_world():
     return 'Hello World!'
+    
+#update user information
+@app.route('/user/update/<userId>&<userMobile>&<userEmail>&<userName>&<userTel>&<userAddr>',methods=['POST','GET'])
+def update_info(userId,userMobile,userEmail,userName,userTel,userAddr):
+    # userId = request.form["userId"]
+    # userMobile = request.form["userMobile"]
+    # userEmail = request.form["userEmail"]
+    # userName = request.form["userName"]
+    # userAddrcode = userAddr.decode(CODE)CODE
+    config.session.query(model.user).filter(model.user.userId == userId).update({
+        model.user.userEmail:userEmail,
+        model.user.userMobile:userMobile,
+        model.user.userName:userName,
+        model.user.userAddr:generate_password_hash(userAddr),
+        model.user.userTel:userTel
+    })
+    config.session.commit()
+    return 'updated'
+
+@app.route('/user/changepsw/<userId>&<userPsw>', methods=['POST', 'GET'])
+def change_psw(userId,userPsw):
+    config.session.query(model.user).filter(model.user.userId == userId).update({
+        model.user.password_hash:generate_password_hash(userPsw)
+    })
+    config.session.commit()
+    return 'updated'
+
+    
 #Register router post
 @app.route('/user/register',methods=['POST','GET'])
 def reg():
