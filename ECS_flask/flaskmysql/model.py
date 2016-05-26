@@ -15,7 +15,7 @@ class user(db.Model):
     userIspaid = db.Column(db.Integer)
     userAddr = db.Column(db.String(100))
     userTel = db.Column(db.String(20))
-    userA = db.Column(db.String(100))
+
     
     @property
     def userPasswd(self):
