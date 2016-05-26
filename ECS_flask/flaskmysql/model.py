@@ -13,7 +13,10 @@ class user(db.Model):
     password_hash=db.Column(db.String(128))
     userEmail = db.Column(db.String(50))
     userIspaid = db.Column(db.Integer)
-
+    userAddr = db.Column(db.String(100))
+    userTel = db.Column(db.String(20))
+    userA = db.Column(db.String(100))
+    
     @property
     def userPasswd(self):
         print '123'
