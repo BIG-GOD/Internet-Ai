@@ -27,8 +27,10 @@ def hello_world():
     return 'Hello World!'
     
 #update user information
-@app.route('/user/update/<userId>&<userMobile>&<userEmail>&<userName>&<userTel>&<userAddr>',methods=['POST','GET'])
-def update_info(userId,userMobile,userEmail,userName,userTel,userAddr):
+@app.route('/user/update/<userMobile>&<userEmail>&<userName>&<userTel>&<userAddr>',methods=['POST','GET'])
+def update_info(userMobile,userEmail,userName,userTel,userAddr):
+    user = config.session.query(model.user).filter(model.user.userName == userName).first()
+    userId = user.userId
     # userId = request.form["userId"]
     # userMobile = request.form["userMobile"]
     # userEmail = request.form["userEmail"]
@@ -37,7 +39,6 @@ def update_info(userId,userMobile,userEmail,userName,userTel,userAddr):
     config.session.query(model.user).filter(model.user.userId == userId).update({
         model.user.userEmail:userEmail,
         model.user.userMobile:userMobile,
-        model.user.userName:userName,
         model.user.userAddr:generate_password_hash(userAddr),
         model.user.userTel:userTel
     })
