@@ -45,8 +45,10 @@ def update_info(userMobile,userEmail,userName,userTel,userAddr):
     config.session.commit()
     return 'updated'
 
-@app.route('/user/changepsw/<userId>&<userPsw>', methods=['POST', 'GET'])
-def change_psw(userId,userPsw):
+@app.route('/user/changepsw/<userName>&<userPsw>', methods=['POST', 'GET'])
+def change_psw(userName,userPsw):
+    user = config.session.query(model.user).filter(model.user.userName == userName).first()
+    userId = user.userId
     config.session.query(model.user).filter(model.user.userId == userId).update({
         model.user.password_hash:generate_password_hash(userPsw)
     })
