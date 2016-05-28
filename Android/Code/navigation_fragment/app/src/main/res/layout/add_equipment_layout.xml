@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:id="@+id/equiptop"
+        android:background="#48D1CC">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="我的设备"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginBottom="20dp"/>
+
+    </RelativeLayout>
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/add"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/add"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/equiptop"
+        android:layout_marginTop="35dp"
+        android:id="@+id/listview"
+        >
+
+    </ListView>
+
+</RelativeLayout>

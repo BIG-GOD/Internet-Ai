@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:id="@+id/setting_top"
+        android:background="#48D1CC">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="230dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="230dp"
+                android:id="@+id/cpu"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="80dp"
+                    android:text="CPU使用率"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:text="12%"
+                    android:textColor="@android:color/white"
+                    android:textSize="70sp"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:id="@+id/cpu_rate"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:background="@android:color/white"
+                />
+
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="230dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/ram"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="80dp"
+                    android:text="内存使用率"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:text="15%"
+                    android:textColor="@android:color/white"
+                    android:textSize="70sp"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:id="@+id/ram_rate"
+                    />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/setting_top"
+        android:id="@+id/setting_bottom"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+
+            >
+            
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/psd"
+                />
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:id="@+id/changepassword"
+                android:layout_marginLeft="15dp"
+                android:text="修改密码"
+                android:textColor="#7A7A7A"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:gravity="center"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/note"/>
+            
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:id="@+id/addinfomation"
+                android:layout_marginLeft="15dp"
+                android:text="完善信息"
+                android:textColor="#7A7A7A"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/cursorx"/>
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:background="@android:color/transparent"
+                android:id="@+id/addequipment"
+                android:text="添加设备"
+                android:textColor="#7A7A7A"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/cursorx"/>
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:background="@android:color/transparent"
+                android:id="@+id/cleardatabase"
+                android:text="清除数据"
+                android:textColor="#7A7A7A"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

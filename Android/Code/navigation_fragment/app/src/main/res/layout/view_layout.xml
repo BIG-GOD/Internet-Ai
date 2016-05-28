@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_margin="25dp"
+            android:id="@+id/icon"
+            android:src="@drawable/device"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:text="树莓派"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:id="@+id/devicename"
+            android:layout_toRightOf="@id/icon"
+            />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/devicename"
+            android:text="Jan 1,2016"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:layout_alignLeft="@id/devicename"
+            android:id="@+id/devicedate"/>
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="25dp"
+            android:background="@drawable/i"/>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

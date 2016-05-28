@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mpandroidchartlibrary-2-2-4/mpandroidchartlibrary-2-2-4.iml" filepath="$PROJECT_DIR$/mpandroidchartlibrary-2-2-4/mpandroidchartlibrary-2-2-4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation_fragment.iml" filepath="$PROJECT_DIR$/navigation_fragment.iml" />
+    </modules>
+  </component>
+</project>

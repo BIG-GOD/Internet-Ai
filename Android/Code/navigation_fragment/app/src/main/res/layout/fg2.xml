@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:gravity="center"
+    android:id="@+id/fg2"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+        <ImageButton
+            android:tag="0"
+            android:layout_centerInParent="true"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/lampoff"
+            android:id="@+id/switch2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="红外控制"
+            android:id="@+id/textView"
+            android:layout_below="@+id/switch2"
+            android:layout_centerHorizontal="true"
+            android:textColor="#807878" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <include
+            android:id="@+id/include_"
+            layout="@layout/bottom_navigation"
+            />
+    </LinearLayout>
+</LinearLayout>

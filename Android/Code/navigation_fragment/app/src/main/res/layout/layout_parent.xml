@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+    <ImageView
+        android:id="@+id/ImageView_Top"
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/entry_blank"
+        android:layout_below="@id/ImageView_Top"
+        android:orientation="horizontal"
+        android:background="#ffffff">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:id="@+id/group_image"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/label_name"
+                    android:textSize="20sp"
+                    android:textColor="@color/blue"
+                    android:text="室内温度"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/current_parameter"
+                    android:textSize="40sp"
+                    android:textColor="#26d5e2"
+                    android:text="15℃"
+                    android:layout_marginLeft="30dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/blank_Bottom"
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/entry_blank" />
+        <ImageView
+            android:id="@+id/ImageView_Bottom"
+            android:background="#e7e7e7"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/blank_Bottom" />
+</RelativeLayout>

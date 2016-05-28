@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.SwipeRefreshLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_swipe_ly"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/top_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@mipmap/back"
+            />
+    <com.example.eason.navigation_fragment.NoScrollListView
+        android:id="@+id/main_expandablelistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_image"
+        />
+    <RelativeLayout
+        android:id="@+id/fire_and_co"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_expandablelistview">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/fire"
+            android:layout_weight="0.5"
+            android:paddingLeft="20dp"
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:src="@drawable/fire" />
+            <TextView
+                android:id="@+id/fireText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image2"
+                android:layout_centerHorizontal="true"
+                android:text="安全"
+                android:textColor="@color/blue"
+                android:textSize="25dp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+            android:id="@+id/gas"
+            android:layout_toRightOf="@id/fire"
+            android:paddingRight="20dp"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:src="@drawable/co" />
+            <TextView
+                android:id="@+id/gasText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image3"
+                android:layout_centerHorizontal="true"
+                android:text="安全"
+                android:textColor="@color/blue"
+                android:textSize="25dp" />
+        </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>
