@@ -11,8 +11,29 @@ BIGGOD团队的安卓课程设计，致力于使用容器技术快速构建虚�
 
 
 
-![github](https://res.cloudinary.com/djhkiiiap/image/upload/v1551258272/arc.png)      
+![github](https://res.cloudinary.com/djhkiiiap/image/upload/v1551258272/arc.png)        
+
+## 演示视频
+![展示视频](http://www.iqiyi.com/w_19rss3qfkt.html)          
 
 
-![展示视频](https://www.iqiyi.com/w_19rss3qfkt.html)
+<p align="center">
+	<img src="https://github.com/BIG-GOD/Internet-Ai/blob/master/a_GUIDE/%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1/QQ%E5%9B%BE%E7%89%8720160504142256.png" alt="Sample"  width="275" height="518">
+</p>
 
+<p align="center">
+	<img src="https://github.com/BIG-GOD/Internet-Ai/blob/master/a_GUIDE/%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1/%E7%B4%A0%E6%9D%90/1.png" alt="Sample"  width="275" height="518">
+</p>
+
+<p align="center">
+	<img src="https://github.com/BIG-GOD/Internet-Ai/blob/master/a_GUIDE/%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1/QQ%E5%9B%BE%E7%89%8720160526100155.png" alt="Sample"  width="275" height="518">
+</p>
+
+<p align="center">
+	<img src="https://github.com/BIG-GOD/Internet-Ai/blob/master/a_GUIDE/%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1/QQ%E5%9B%BE%E7%89%8720160526103348.png" alt="Sample"  width="275" height="518">
+</p>
+
+<p align="center">
+	<img src="https://github.com/BIG-GOD/Internet-Ai/blob/master/a_GUIDE/%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1/%E7%B4%A0%E6%9D%90/2.png" alt="Sample"  width="275" height="518">
+</p>
+                       
